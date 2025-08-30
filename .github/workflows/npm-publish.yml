@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: npm install
         env:
-          PUPPETEER_SKIP_DOWNLOAD: true
+          PUPPETEER_SKIP_DOWNLOAD: false
 
       - name: Run example (basic test)
         run: npm run example
