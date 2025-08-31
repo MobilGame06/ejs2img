@@ -1,4 +1,4 @@
-# ejs-to-image
+# ejs2img
 
 Convert EJS templates into PNG or JPEG images using Puppeteer. Perfect for generating social media cards, certificates, badges, or any visual content from your templates.
 
@@ -14,23 +14,23 @@ Convert EJS templates into PNG or JPEG images using Puppeteer. Perfect for gener
 ## Installation
 
 ```bash
-npm install ejs-to-image
+npm install ejs2img
 ```
 
 ## Quick Start
 
 ```javascript
-import { renderEjsToImageBuffer } from 'ejs-to-image';
+import { renderEjsToImageBuffer } from "ejs2img";
 
 // Render EJS template to image buffer
-const imageBuffer = await renderEjsToImageBuffer('template.ejs', {
-  title: 'Hello World',
-  subtitle: 'Generated with ejs-to-image'
+const imageBuffer = await renderEjsToImageBuffer("template.ejs", {
+  title: "Hello World",
+  subtitle: "Generated with ejs2img",
 });
 
 // Save to file
-import fs from 'fs/promises';
-await fs.writeFile('output.png', imageBuffer);
+import fs from "fs/promises";
+await fs.writeFile("output.png", imageBuffer);
 ```
 
 ## API Reference
@@ -40,6 +40,7 @@ await fs.writeFile('output.png', imageBuffer);
 Render an EJS template to HTML string.
 
 **Parameters:**
+
 - `ejsPath` (string): Path to the EJS template file
 - `data` (object, optional): Data to pass to the template
 
@@ -50,11 +51,13 @@ Render an EJS template to HTML string.
 Render an EJS template to image buffer.
 
 **Parameters:**
-- `ejsPath` (string): Path to the EJS template file  
+
+- `ejsPath` (string): Path to the EJS template file
 - `data` (object, optional): Data to pass to the template
 - `options` (object, optional): Rendering options
 
 **Options:**
+
 - `width` (number): Viewport width in pixels (default: 1200)
 - `height` (number): Viewport height in pixels (default: 630)
 - `fullPage` (boolean): Capture full scrollable page (default: false)
@@ -69,8 +72,9 @@ Render an EJS template to image buffer.
 Render an EJS template directly to an image file.
 
 **Parameters:**
+
 - `ejsPath` (string): Path to the EJS template file
-- `data` (object): Data to pass to the template  
+- `data` (object): Data to pass to the template
 - `outPath` (string): Output file path
 - `options` (object, optional): Same options as `renderEjsToImageBuffer`
 
@@ -81,50 +85,62 @@ Render an EJS template directly to an image file.
 ### Basic Usage
 
 ```javascript
-import { renderEjsToImageFile } from 'ejs-to-image';
+import { renderEjsToImageFile } from "ejs2img";
 
 // Create a simple card
-await renderEjsToImageFile('card.ejs', {
-  title: 'Welcome!',
-  message: 'Thanks for using ejs-to-image'
-}, 'welcome-card.png');
+await renderEjsToImageFile(
+  "card.ejs",
+  {
+    title: "Welcome!",
+    message: "Thanks for using ejs2img",
+  },
+  "welcome-card.png"
+);
 ```
 
 ### Custom Dimensions and Format
 
 ```javascript
-import { renderEjsToImageBuffer } from 'ejs-to-image';
+import { renderEjsToImageBuffer } from "ejs2img";
 
-const buffer = await renderEjsToImageBuffer('banner.ejs', {
-  event: 'Tech Conference 2024',
-  date: 'March 15-17'
-}, {
-  width: 1920,
-  height: 1080,
-  format: 'jpeg',
-  quality: 95
-});
+const buffer = await renderEjsToImageBuffer(
+  "banner.ejs",
+  {
+    event: "Tech Conference 2024",
+    date: "March 15-17",
+  },
+  {
+    width: 1920,
+    height: 1080,
+    format: "jpeg",
+    quality: 95,
+  }
+);
 ```
 
 ### Transparent Background
 
 ```javascript
-import { renderEjsToImageBuffer } from 'ejs-to-image';
+import { renderEjsToImageBuffer } from "ejs2img";
 
-const buffer = await renderEjsToImageBuffer('logo.ejs', {
-  company: 'Acme Corp'
-}, {
-  width: 400,
-  height: 400,
-  format: 'png',
-  transparent: true
-});
+const buffer = await renderEjsToImageBuffer(
+  "logo.ejs",
+  {
+    company: "Acme Corp",
+  },
+  {
+    width: 400,
+    height: 400,
+    format: "png",
+    transparent: true,
+  }
+);
 ```
 
 ### Full Page Screenshot
 
 ```javascript
-import { renderEjsToImageBuffer } from 'ejs-to-image';
+import { renderEjsToImageBuffer } from 'ejs2img';
 
 const buffer = await renderEjsToImageBuffer('invoice.ejs', {
   invoiceNumber: 'INV-001',
@@ -143,47 +159,56 @@ Create an EJS template (`card.ejs`):
 ```html
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <style>
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .card {
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-        }
-        h1 { margin: 0 0 10px 0; }
-        p { margin: 0; opacity: 0.9; }
+      body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+      .card {
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 20px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+      }
+      h1 {
+        margin: 0 0 10px 0;
+      }
+      p {
+        margin: 0;
+        opacity: 0.9;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="card">
-        <h1><%= title %></h1>
-        <p><%= subtitle %></p>
+      <h1><%= title %></h1>
+      <p><%= subtitle %></p>
     </div>
-</body>
+  </body>
 </html>
 ```
 
 Then render it:
 
 ```javascript
-import { renderEjsToImageFile } from 'ejs-to-image';
+import { renderEjsToImageFile } from "ejs2img";
 
-await renderEjsToImageFile('card.ejs', {
-  title: 'Hello World! 🚀',
-  subtitle: 'Generated with ejs-to-image'
-}, 'output.png');
+await renderEjsToImageFile(
+  "card.ejs",
+  {
+    title: "Hello World! 🚀",
+    subtitle: "Generated with ejs2img",
+  },
+  "output.png"
+);
 ```
 
 ## Requirements
@@ -194,7 +219,7 @@ await renderEjsToImageFile('card.ejs', {
 ## Use Cases
 
 - **Social Media Cards**: Generate Open Graph images, Twitter cards
-- **Certificates**: Create personalized certificates and badges  
+- **Certificates**: Create personalized certificates and badges
 - **Reports**: Convert HTML reports to images
 - **Email Images**: Generate images for email campaigns
 - **Thumbnails**: Create preview images for content

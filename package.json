@@ -1,5 +1,5 @@
 {
-  "name": "ejs-to-image",
+  "name": "ejs2img",
   "version": "1.0.0",
   "description": "Render EJS templates into PNG or JPEG images using Puppeteer",
   "type": "module",
@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MobilGame06/ejs-to-image.git"
+    "url": "git+https://github.com/MobilGame06/ejs2img.git"
   },
   "bugs": {
-    "url": "https://github.com/MobilGame06/ejs-to-image/issues"
+    "url": "https://github.com/MobilGame06/ejs2img/issues"
   },
-  "homepage": "https://github.com/MobilGame06/ejs-to-image#readme",
+  "homepage": "https://github.com/MobilGame06/ejs2img#readme",
   "keywords": [
     "ejs",
     "png",
