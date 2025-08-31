@@ -37,10 +37,10 @@
   "author": "MobilGame06",
   "license": "MIT",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=18.0.0"
   },
   "dependencies": {
     "ejs": "^3.1.10",
-    "puppeteer": "^22.15.0"
+    "puppeteer": "^24.17.1"
   }
 }
