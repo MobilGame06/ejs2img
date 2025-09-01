@@ -12,6 +12,7 @@ Convert EJS templates into PNG or JPEG images using Puppeteer. Perfect for gener
 - 🚀 Built with Puppeteer for high-quality rendering
 
 ## Installation
+[![NPM](https://nodei.co/npm/ejs2img.png)](https://www.npmjs.com/package/ejs2img)
 
 ```bash
 npm install ejs2img
