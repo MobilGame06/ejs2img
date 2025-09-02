@@ -1,6 +1,6 @@
 {
   "name": "ejs2img",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Render EJS templates into PNG or JPEG images using Puppeteer",
   "type": "module",
   "main": "src/index.js",

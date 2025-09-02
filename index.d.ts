@@ -11,6 +11,8 @@ export interface RenderOptions {
   format?: "png" | "jpeg";
   /** JPEG quality 0–100 (only applies to JPEG) */
   quality?: number;
+  /** Options passed directly to puppeteer.launch */
+  puppeteerLaunchOptions?: import("puppeteer").PuppeteerLaunchOptions;
 }
 
 /**

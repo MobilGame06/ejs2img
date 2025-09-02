@@ -12,6 +12,7 @@ Convert EJS templates into PNG or JPEG images using Puppeteer. Perfect for gener
 - 🚀 Built with Puppeteer for high-quality rendering
 
 ## Installation
+
 [![NPM](https://nodei.co/npm/ejs2img.png)](https://www.npmjs.com/package/ejs2img)
 
 ```bash
@@ -65,6 +66,7 @@ Render an EJS template to image buffer.
 - `transparent` (boolean): Transparent background, PNG only (default: false)
 - `format` (string): Output format "png" or "jpeg" (default: "png")
 - `quality` (number): JPEG quality 0-100 (default: 80)
+- `puppeteerLaunchOptions` (object): Options forwarded to puppeteer.launch() (e.g. executablePath, args, etc. https://pptr.dev/api/puppeteer.launchoptions)
 
 **Returns:** `Promise<Buffer>` - Image buffer
 
@@ -115,6 +117,11 @@ const buffer = await renderEjsToImageBuffer(
     height: 1080,
     format: "jpeg",
     quality: 95,
+    puppeteerLaunchOptions: {
+      executablePath: "/usr/bin/chromium-browser",
+      // all launch options
+      // https://pptr.dev/api/puppeteer.launchoptions
+    },
   }
 );
 ```

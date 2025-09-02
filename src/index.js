@@ -26,6 +26,7 @@ export async function renderEjsToHtml(ejsPath, data = {}) {
  * @param {boolean} [options.transparent=false] Transparent background (PNG only).
  * @param {"png"|"jpeg"} [options.format="png"] Image format.
  * @param {number} [options.quality] JPEG quality (0–100).
+ * @param {object} [options.puppeteerLaunchOptions] Options passed directly to puppeteer.launch.
  * @returns {Promise<Buffer>} Image buffer.
  */
 export async function renderEjsToImageBuffer(ejsPath, data = {}, options = {}) {
@@ -35,13 +36,15 @@ export async function renderEjsToImageBuffer(ejsPath, data = {}, options = {}) {
         fullPage = false,
         transparent = false,
         format = "png",
-        quality
+        quality,
+        puppeteerLaunchOptions = {}
     } = options;
 
     const html = await renderEjsToHtml(ejsPath, data);
 
     const browser = await puppeteer.launch({
-        args: ["--no-sandbox", "--disable-setuid-sandbox"]
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        ...puppeteerLaunchOptions
     });
 
     try {
