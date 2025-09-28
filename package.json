@@ -41,6 +41,6 @@
   },
   "dependencies": {
     "ejs": "^3.1.10",
-    "puppeteer": "^24.17.1"
+    "puppeteer": "^24.22.3"
   }
 }
