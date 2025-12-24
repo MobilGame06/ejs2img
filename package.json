@@ -1,6 +1,6 @@
 {
   "name": "ejs2img",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Render EJS templates into PNG or JPEG images using Puppeteer",
   "type": "module",
   "main": "src/index.js",
@@ -41,6 +41,6 @@
   },
   "dependencies": {
     "ejs": "^3.1.10",
-    "puppeteer": "^24.22.3"
+    "puppeteer": "^24.34.0"
   }
 }
